@@ -12,10 +12,7 @@ func aichatCLI() schema.Executable {
 		Name:      "aichat CLI", // TODO: Check if this is correct
 		Runs:      []string{"aichat"},
 		DocsURL:   sdk.URL("https://aichat.com/docs/cli"), // TODO: Replace with actual URL
-		NeedsAuth: needsauth.IfAll(
-			needsauth.NotForHelpOrVersion(),
-			needsauth.NotWithoutArgs(),
-		),
+		NeedsAuth: needsauth.NotForHelpOrVersion(),
 		Uses: []schema.CredentialUsage{
 			{
 				Name: credname.APIKey,
